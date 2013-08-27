@@ -128,4 +128,40 @@ public class Issue184MockProducer implements ODataProducer {
     return null;
   }
 
+  @Override
+  public void beginChangeSetBoundary() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void commitChangeSetBoundary() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void rollbackChangeSetBoundary() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public EntityResponse createResponseForBatchPostOperation(String entitySetName, OEntity entity) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public InputStream getInputStreamForMediaLink(String entitySetName, OEntityKey entityKey, EntityQueryInfo queryInfo) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void updateEntityWithStream(String entitySetName, OEntity entity) {
+    // TODO Auto-generated method stub
+    
+  }
+
 }

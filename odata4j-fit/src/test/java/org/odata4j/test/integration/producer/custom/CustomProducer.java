@@ -510,4 +510,40 @@ public class CustomProducer implements ODataProducer {
       return getMLE(mle.getEntitySet(), id, mediaResources.get(id));
     }
   }
+
+  @Override
+  public void beginChangeSetBoundary() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void commitChangeSetBoundary() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void rollbackChangeSetBoundary() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public EntityResponse createResponseForBatchPostOperation(String entitySetName, OEntity entity) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public InputStream getInputStreamForMediaLink(String entitySetName, OEntityKey entityKey, EntityQueryInfo queryInfo) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void updateEntityWithStream(String entitySetName, OEntity entity) {
+    // TODO Auto-generated method stub
+    
+  }
 }

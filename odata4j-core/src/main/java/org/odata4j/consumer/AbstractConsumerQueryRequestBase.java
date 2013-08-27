@@ -36,17 +36,18 @@ public abstract class AbstractConsumerQueryRequestBase<T> implements OQueryReque
   private final List<EntitySegment> segments = new ArrayList<EntitySegment>();
   private final Map<String, String> customs = new HashMap<String, String>();
 
-  public AbstractConsumerQueryRequestBase(ODataClient client, String serviceRootUri, EdmDataServices metadata, String lastSegment) {
+  public AbstractConsumerQueryRequestBase(ODataClient client, String serviceRootUri, EdmDataServices metadata, String lastSegment){
+    this(client, serviceRootUri, metadata, lastSegment, false);
+  }
+  
+  public AbstractConsumerQueryRequestBase(ODataClient client, String serviceRootUri, EdmDataServices metadata, String lastSegment, boolean isFunctionCall) {
     this.client = client;
     this.serviceRootUri = serviceRootUri;
     this.metadata = metadata;
     this.lastSegment = lastSegment;
 
-    this.entitySet = metadata.findEdmEntitySet(lastSegment);
-    if (this.entitySet == null) {
-      EdmFunctionImport function = metadata.findEdmFunctionImport(lastSegment);
-      if (function != null)
-        this.entitySet = function.getEntitySet();
+    if (!isFunctionCall){
+      this.entitySet = metadata.findEdmEntitySet(lastSegment);
     }
   }
 
